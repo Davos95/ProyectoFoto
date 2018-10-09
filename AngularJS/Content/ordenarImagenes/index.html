@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        .box {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="../../Scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var origenImagen = "";
+            var origenCaja = "";
+            var destinoImagen = "";
+            var flag = true;
+            $(".box")
+                .on("dragover", function (e) {
+                    e.preventDefault();
+                    if (flag) {
+                        origenImagen = $(".box:nth-child(" + ($(this).index() + 1) + ")>img").attr('src');
+                        origenCaja = $(".box:nth-child(" + ($(this).index() + 1) + ")").attr("id");
+                        flag = false;
+                    }
+                })
+                .on("drop", function (e) {
+                    e.preventDefault();
+                    destinoImagen = $(".box:nth-child(" + ($(this).index() + 1) + ")>img").attr('src');
+                    $(".box:nth-child(" + ($(this).index() + 1) + ")>img").attr("src", origenImagen);
+                    $("#"+origenCaja + ">img").attr("src", destinoImagen);
+                    flag = true;
+
+                });
+
+
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h2>Demo Drag an' Drop</h2>
+        <h3>Modulo de ordenacion de imagenes</h3>
+    </header>
+
+    <div id="div1" class="box" value="1">
+        <img src="../../images/beagle.jpg" draggable="true" id="drag1" width="88" height="31">
+    </div>
+
+    <div id="div2" class="box">
+        <img src="../../images/google.jpg" draggable="true"  id="drag2" width="88" height="31">
+    </div>
+
+    <div id="div3" class="box">
+        <img src="../../images/imagenWindows.jpg" draggable="true" id="drag3" width="88" height="31">
+    </div>
+    <div id="div4" class="box">
+        <img src="" draggable="true" id="drag4" width="88" height="31">
+    </div>
+</body>
+</html>
