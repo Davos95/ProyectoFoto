@@ -1,0 +1,43 @@
+﻿.bloque {
+    display:block;
+    color: white;
+    border-radius:15px;
+}
+/*
+.cardPrincipal {
+    margin-top:10%;
+}
+
+.cardPrincipal.ng-enter {
+    opacity:0;
+}
+.cardPrincipal.ng-leave {
+    opacity:1;
+}
+.cardPrincipal.ng-enter.ng-enter-active {
+        opacity: 1;
+}
+.cardPrincipal.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.planet-container {
+    position:relative;
+}
+
+.planet-view.ng-animate {
+  transition: 0.7s;
+}
+
+.planet-view.ng-enter {
+    opacity: 0;
+}
+
+.planet-view.ng-leave, .planet-view.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.planet-view.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+        */
