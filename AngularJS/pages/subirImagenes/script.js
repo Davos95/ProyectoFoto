@@ -35,13 +35,14 @@ function createFormData(image) {
 
 function uploadFormData(formData) {
  $.ajax({
- url: "upload_image.php",
- type: "POST",
- data: formData,
- contentType:false,
- cache: false,
- processData: false,
- success: function(data){
-  $('#drop-area').html(data);
- }});
+     url: "subir.php",
+     type: "POST",
+     data: formData,
+     contentType: false,
+     cache: false,
+     processData: false,
+     success: function (data) {
+         $('#drop-area').html(data);
+     }
+ });
 }
